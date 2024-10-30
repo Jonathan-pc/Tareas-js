@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Jonathan-pc/Tareas-js/issues"
   },
-  "homepage": "https://github.com/Jonathan-pc/Tareas-js#readme"
+  "homepage": "https://github.com/Jonathan-pc/Tareas-js#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
 }

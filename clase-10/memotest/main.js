@@ -19,11 +19,11 @@ function empezarJuego() {
 
     clearInterval(intervalo);
     intervalo = setInterval(() => {
-        temporizador += 1;
+        temporizador = temporizador + 1;
         $mostrarTemporizador.textContent = temporizador;
     }, 1000);
 
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 8; i = i + 1) {
         $cartas.push(i);
         $cartas.push(i);
     }
@@ -40,7 +40,7 @@ function empezarJuego() {
 }
 
 function mezclar(arrayCartas) {
-    for (let i = arrayCartas.length - 1; i > 0; i--) {
+    for (let i = arrayCartas.length - 1; i > 0; i = i - 1) {
         const j = Math.floor(Math.random() * (i + 1));
         [arrayCartas[i], arrayCartas[j]] = [arrayCartas[j], arrayCartas[i]];
     }
@@ -55,12 +55,12 @@ function girarCarta(event) {
     $cartasGiradas.push(carta);
 
     if ($cartasGiradas.length === 2) {
-        intentos += 1;
+        intentos = intentos + 1;
         $mostrarIntentos.textContent = intentos;
 
         if ($cartasGiradas[0].dataset.value === $cartasGiradas[1].dataset.value) {
             $cartasGiradas = [];
-            partidas += 1;
+            partidas = partidas + 1;
             if (partidas === $cartas.length / 2) {
                 clearInterval(intervalo);
                 alert(`¡Ganaste! Tiempo total: ${temporizador} segundos, Intentos: ${intentos}`);

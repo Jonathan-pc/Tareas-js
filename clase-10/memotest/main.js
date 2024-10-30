@@ -39,10 +39,10 @@ function empezarJuego() {
     });
 }
 
-function mezclar(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+function mezclar(arrayCartas) {
+    for (let i = arrayCartas.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [arrayCartas[i], arrayCartas[j]] = [arrayCartas[j], arrayCartas[i]];
     }
 }
 
